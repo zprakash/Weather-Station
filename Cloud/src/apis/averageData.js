@@ -1,7 +1,7 @@
 // src/apis/averageData.js
 const db = require('../firebase');
 
-// Helper function to calculate averages
+// function to calculate averages
 function calculateAverage(data) {
   let totalTemp = 0;
   let totalHumidity = 0;
@@ -15,9 +15,13 @@ function calculateAverage(data) {
     count++;
   }
 
+  // Calculate the averages and limit them to 2 decimal places
+  const averageTemperature = (totalTemp / count).toFixed(2);
+  const averageHumidity = (totalHumidity / count).toFixed(2);
+
   return {
-    averageTemperature: totalTemp / count,
-    averageHumidity: totalHumidity / count
+    averageTemperature: parseFloat(averageTemperature), 
+    averageHumidity: parseFloat(averageHumidity)        
   };
 }
 

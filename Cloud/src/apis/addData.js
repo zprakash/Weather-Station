@@ -18,9 +18,9 @@ module.exports = async (req, res) => {
     const uniqueDeviceId = `${deviceId}-${Date.now()}`;
     // Prepare the data object with current timestamp
     const deviceData = {
-      temperature: parseFloat(temperature),  // Ensure floating-point number
-      humidity: parseFloat(humidity),        // Ensure floating-point number
-      timestamp: new Date().toISOString(),   // Store timestamp in ISO 8601 format
+      temperature: parseFloat(temperature),  
+      humidity: parseFloat(humidity),        
+      timestamp: new Date().toISOString(),   
     };
 
     // Reference the database for the device
